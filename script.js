@@ -35,7 +35,8 @@ $(document).ready(function () {
 
    //write a for in loop that cycles through an object using a broad function
 
-   const = populateMarkers = function({)
+
+// expected output: "123"
 
 
    L.marker([46, -122.33])
@@ -100,7 +101,16 @@ $(document).ready(function () {
          coordinates: "[39.1, -84.5120196]",
          popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`
       }
-   };
+   }
+   const blahblah = function(){
+      console.log("I am good");
+   }
+
+   for (const taco in hotDogInfo) {
+      if (hotDogInfo.hasOwnProperty(taco)) {
+         blahblah();
+      }
+   }
 
    //---PSUEDO CODE ----
    //-------------------

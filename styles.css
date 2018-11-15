@@ -1,6 +1,8 @@
 #mapid {
   height: 400px;
-  width: 80%; }
+  width: 80%;
+  border: 10px solid yellow;
+  border-radius: 10px; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -193,6 +195,9 @@ template {
 #mapid {
   height: 500px; }
 
+body {
+  background: #ff0000; }
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,3 +240,10 @@ main {
 
 .show-me {
   display: block; }
+
+h1 {
+  font-size: 4rem;
+  -webkit-text-fill-color: #FF0000;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: yellow; }
