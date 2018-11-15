@@ -1,0 +1,31 @@
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 90vh;
+   .gallery {
+      background: blue;
+      width: 80%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+ .switch {
+      color: black;
+      padding: 40px;
+      background: yellow;
+      }
+
+.content {
+	margin-top: 20vh;
+      height: 80vh;
+	text-align: center;
+      display: none;
+}
+
+.show-me {
+   display: block;
+}
