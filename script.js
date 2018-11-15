@@ -36,24 +36,23 @@ $(document).ready(function () {
    //write a for in loop that cycles through an object using a broad function
 
 
-// expected output: "123"
 
 
    L.marker([46, -122.33])
       .addTo(mymap)
       .bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`);
 
-   let blob = L.marker([42.3314, -83.045]).addTo(mymap);
+   // let blob = L.marker([42.3314, -83.045]).addTo(mymap);
 
-   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`);
+   // blob.bindPopup(`<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`);
 
-   blob = L.marker([34, -118.24]).addTo(mymap);
+   // blob = L.marker([34, -118.24]).addTo(mymap);
 
-   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`);
+   // blob.bindPopup(`<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`);
 
-   blob = L.marker([39.1, -84.5120196]).addTo(mymap);
+   // blob = L.marker([39.1, -84.5120196]).addTo(mymap);
 
-   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`);
+   // blob.bindPopup(`<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`);
 
 
 
@@ -68,7 +67,7 @@ $(document).ready(function () {
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
          restaurant:"https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
-         coordinates: "[42.3314, -83.045]",
+         coordinates: [42.3314, -83.045],
          popUpContent: `<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`
       },
 
@@ -78,7 +77,7 @@ $(document).ready(function () {
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
          restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
-         coordinates: "[34, -118.24]",
+         coordinates: [34, -118.24],
          popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
       },
 
@@ -88,7 +87,7 @@ $(document).ready(function () {
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
          restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
-         coordinates: "[46, -122.33]",
+         coordinates: [46, -122.33],
          popUpContent: `<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`
       },
 
@@ -98,19 +97,53 @@ $(document).ready(function () {
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "This dog is like the other Coney Dogs… but with cheese. Really. That’s it. That is all Cincinnati has to bring to the table for us. But really the Cheesy Coney actually has is a dry chilli that features all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. And you get a mid-west serving of shredded cheese on top. T Fun fact: there are four different local chains of ‘chilli’ diners in the Cincinnati area and it is amazing competition.",
          restaurant:  "http://www.dixiechili.com/",
-         coordinates: "[39.1, -84.5120196]",
+         coordinates: [39.1, -84.5120196],
          popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`
-      }
-   }
-   const blahblah = function(){
-      console.log("I am good");
+      } 
    }
 
-   for (const taco in hotDogInfo) {
-      if (hotDogInfo.hasOwnProperty(taco)) {
-         blahblah();
-      }
-   }
+   for (const info in hotDogInfo) {
+      const place = hotDogInfo[info].coordinates;
+      const popUp = hotDogInfo[info].popUpContent;
+      L.marker(place)
+         .addTo(mymap)
+         .bindPopup(popUp);
+   };
+   
+   // const luca = {
+   //    age: 27,
+   //    height: "shut up, rude to ask",
+   //    toque: "sick, green",
+   //    others: {
+   //       beard: "yup",
+   //       hair: "brown"
+   //    }
+   // }
+   // luca.height
+   // luca["height"]
+
+   // const hmmm = "height";
+   // luca[hmmm];
+
+   // for (const thingy in luca) {
+   //    console.log(luca[thingy]);
+   // }
+
+   // let thingy = "age";
+   // console.log(luca[thingy]);
+
+   // thingy = "height";
+   // console.log(luca[thingy]);
+
+   // thingy = "toque";
+   // console.log(luca[thingy]);
+
+   // thingy = "others";
+   // console.log(luca[thingy]);
+
+
+
+
 
    //---PSUEDO CODE ----
    //-------------------

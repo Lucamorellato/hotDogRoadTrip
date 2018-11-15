@@ -20,7 +20,7 @@ main {
  .switch {
       color: black;
       padding: 40px;
-      background: yellow;
+      background: #FFF900;
       }
 
 .content {
@@ -38,5 +38,5 @@ h1 {
       font-size: 4rem;
       -webkit-text-fill-color: #FF0000; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: yellow;
+  -webkit-text-stroke-color: #FFF900;
 }
