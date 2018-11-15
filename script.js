@@ -19,7 +19,15 @@ $(document).ready(function () {
 
    var marker1 = L.marker([46, -122.33]).addTo(mymap);
 
-   marker1.bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">seattle</a>`).openPopup();
+   marker1.bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`);
+
+   var marker2 = L.marker([42.3314, -83.045]).addTo(mymap);
+
+   marker2.bindPopup(`<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`);
+
+   var marker3 = L.marker([34, -118.24]).addTo(mymap);
+
+   marker3.bindPopup(`<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`);
 
 
 
@@ -59,24 +67,20 @@ $(document).ready(function () {
    //find object that correlates to selected button 
 
 
-   // $('a').smoothScroll();
-
-
    //MAIN FUNCTION ON CLICK OF A BUTTON
    
 
-   $(".switch").on("click", function(event){
-      event.preventDefault();
+   $("#mapid").on("click", ".switch", function(event){
+      // event.preventDefault();
+      console.log('click');
       const dogChoice = $(this).attr("data-dog");
       $(".content").addClass("show-me");
       displayDogOnPage(dogChoice);
-      // removeDogOnPage();
-
    });
 
    //FUNCTION THAT DISPLAYS HOT DOG OF USER CHOICE
    const displayDogOnPage = function(dogChoice) {
-      $(".content").html(`<h2>${hotDogInfo[dogChoice].location}</h2><img src="${hotDogInfo[dogChoice].imgsrc}"><h4>${hotDogInfo[dogChoice].location}</h4>
+      $(".content").html(`<h2>${hotDogInfo[dogChoice].title}</h2><img src="${hotDogInfo[dogChoice].imgsrc}"><h4>${hotDogInfo[dogChoice].location}</h4>
       <p>${hotDogInfo[dogChoice].description}</p>
       <a href="${hotDogInfo[dogChoice].restaurant}"></a>
       <a class="return-switch" href="#top">Back to map</a>`);
@@ -86,24 +90,23 @@ $(document).ready(function () {
    //FUNCTION THAT REMOVES HOT DOG from screen
    const removeDogOnPage = function(event){
       $(".return-switch").on("click", function(event) {
-         event.preventDefault();
          scrollBackToTop();
       });
    }
 
-   const smoothScroll = function () {
-      $("a[href^='#']").on("click", function (event) {
-         const target = this.hash;
-         const $target = $(target);
-         $("html, body").animate({
-            "scrollTop": $target.offset().top
-         }, 750, "swing", function () {
-            window.location.hash = target;
-         });
-      });
-   }
+   // const smoothScroll = function () {
+   //    $("a[href^='#']").on("click", function (event) {
+   //       const target = this.hash;
+   //       const $target = $(target);
+   //       $("html, body").animate({
+   //          "scrollTop": $target.offset().top
+   //       }, 750, "swing", function () {
+   //          window.location.hash = target;
+   //       });
+   //    });
+   // }
 
-   smoothScroll();
+   // smoothScroll();
 
 
    const scrollBackToTop = function () {
@@ -111,6 +114,16 @@ $(document).ready(function () {
          $(".content").removeClass("show-me")
       }, 500);
    };
+
+   $('a[href^="#"]').on('click', function (event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+         event.preventDefault();
+         $('html, body').stop().animate({
+            scrollTop: target.offset().top
+         }, 500);
+      }
+   });
 
 
          

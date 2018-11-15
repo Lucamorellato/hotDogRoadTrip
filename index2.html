@@ -5,68 +5,28 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>TESTTEST</title>
-   crossorigin=""/>
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-   <!-- Make sure you put this AFTER Leaflet's CSS -->
-   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-      crossorigin=""></script>
-      
-      <style>
-      #mapid { 
-         margin: 0 auto;
-         height: 75vh; 
-         width: 768px;
-   }   
-
-   #accordion {     
-    "ui-accordion-header": "ui-corner-top",
-    "ui-accordion-header-collapsed": "ui-corner-all",
-    "ui-accordion-content": "ui-corner-bottom"
-   }
-
-      </style>
+    <title>jQuery UI Accordion - Collapse content</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true
+            });
+        });
+    </script>
 </head>
 <body>
-   <div id="mapid"></div>
 
-    <section id="accordion">
-        <h2>LOL</h2>
+    <div id="accordion">
+        <h3>LOL</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem hic enim modi, fugiat laboriosam similique ab quae aliquam dolorem eius veritatis earum minus tempora deserunt nihil impedit? Quisquam, aliquam nesciunt.</p>
-    </section>
-    <section id="accordion">
-        <h2>WOW</h2>
+        <h3>WOW</h3>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque nam animi porro unde placeat eum totam accusamus nemo molestias id deserunt beatae inventore quidem, repellendus eaque consectetur rem, quibusdam error, et optio rerum. Iste, aperiam odit perspiciatis recusandae ab placeat!</p>
-    </section>
-    <section id="accordion">
-        <h2>WOWOWOWOWw</h2>
+        <h3>WOWOWOWOWw</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laborum iure nihil officiis error voluptate expedita maiores obcaecati repellendus veritatis sunt quis eaque totam repudiandae quas vitae culpa, hic, quam ad recusandae, deleniti molestiae! Accusamus saepe cumque at animi fugiat. Tempore molestiae velit pariatur cum porro labore consequatur a maxime.</p>
-    </section>
-
-<script>
-   var mymap = L.map('mapid').setView([39.828, -98.5799], 4.2);
-   
-
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox.streets',
-      accessToken: 'your.mapbox.access.token'
-   }).addTo(mymap);
-
-       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
-
-        $( function() {
-        $( "#accordion" ).accordion({
-            collapsible: true,
-        });
-    });
-  
-
-</script>
-<script <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </div>
 </body>
 </html>
