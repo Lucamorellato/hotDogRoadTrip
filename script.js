@@ -2,9 +2,8 @@
 //DOCUMENT READY
 $(document).ready(function () {
    
-   // LEAFLET MAP SCRIPT
+   // LEAFLET MAP SETUP SCRIPT
    var mymap = L.map('mapid').setView([39.825, -98.5799], 4.2);
-
    
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -17,17 +16,44 @@ $(document).ready(function () {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
    }).addTo(mymap);
 
-   var marker1 = L.marker([46, -122.33]).addTo(mymap);
 
-   marker1.bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`);
+   //LIST OF MAP MARKERS
+   // let blob = L.marker([46, -122.33]).addTo(mymap);
 
-   var marker2 = L.marker([42.3314, -83.045]).addTo(mymap);
+   // blob.bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`);
 
-   marker2.bindPopup(`<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`);
 
-   var marker3 = L.marker([34, -118.24]).addTo(mymap);
 
-   marker3.bindPopup(`<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`);
+   // L.marker(LONGLATVARIABLE)
+   //    .addTo(mymap)
+   //    .bindPopup(`<a class="switch" href="#stuff" data-dog="DATAVARIABLE">NAMEOFDOGVARIABLE</a>`);
+
+
+   // for(item in dogInfoi) {
+   //    addThisShitToTheMap(dogInfoi.nameOfDog);
+   // };
+
+   //write a for in loop that cycles through an object using a broad function
+
+   const = populateMarkers = function({)
+
+
+   L.marker([46, -122.33])
+      .addTo(mymap)
+      .bindPopup(`<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`);
+
+   let blob = L.marker([42.3314, -83.045]).addTo(mymap);
+
+   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`);
+
+   blob = L.marker([34, -118.24]).addTo(mymap);
+
+   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`);
+
+   blob = L.marker([39.1, -84.5120196]).addTo(mymap);
+
+   blob.bindPopup(`<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`);
+
 
 
 
@@ -40,7 +66,9 @@ $(document).ready(function () {
          location: "Detroit Area, Michigan",
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
-         restaurant:"https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html"
+         restaurant:"https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
+         coordinates: "[42.3314, -83.045]",
+         popUpContent: `<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`
       },
 
       dangerdog: {
@@ -48,7 +76,9 @@ $(document).ready(function () {
          location: "Los Angelos, California",
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
-         restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html"
+         restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
+         coordinates: "[34, -118.24]",
+         popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
       },
 
       seattledog: {
@@ -56,9 +86,21 @@ $(document).ready(function () {
          location: "Seattle, Washington",
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "lorem lorem lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio non harum error officia impedit, numquam earum accusamus iste, consectetur quisquam, distinctio tenetur lorem lorem lorem lorem",
-         restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html"
+         restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
+         coordinates: "[46, -122.33]",
+         popUpContent: `<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`
+      },
+
+      cheesyconey: {
+         title: "Cincinnati Cheesy Coney",
+         location: "Cincinnati, Ohio",
+         imgsrc: "https://www.fillmurray.com/500/200",
+         description: "This dog is like the other Coney Dogs… but with cheese. Really. That’s it. That is all Cincinnati has to bring to the table for us. But really the Cheesy Coney actually has is a dry chilli that features all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. And you get a mid-west serving of shredded cheese on top. T Fun fact: there are four different local chains of ‘chilli’ diners in the Cincinnati area and it is amazing competition.",
+         restaurant:  "http://www.dixiechili.com/",
+         coordinates: "[39.1, -84.5120196]",
+         popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cincinnati Cheesy Coney</a>`
       }
-   }
+   };
 
    //---PSUEDO CODE ----
    //-------------------
@@ -71,8 +113,6 @@ $(document).ready(function () {
    
 
    $("#mapid").on("click", ".switch", function(event){
-      // event.preventDefault();
-      console.log('click');
       const dogChoice = $(this).attr("data-dog");
       $(".content").addClass("show-me");
       displayDogOnPage(dogChoice);
@@ -80,19 +120,29 @@ $(document).ready(function () {
 
    //FUNCTION THAT DISPLAYS HOT DOG OF USER CHOICE
    const displayDogOnPage = function(dogChoice) {
+      $('html, body').animate({
+         scrollTop: $("#stuff").offset().top
+      }, 500);
       $(".content").html(`<h2>${hotDogInfo[dogChoice].title}</h2><img src="${hotDogInfo[dogChoice].imgsrc}"><h4>${hotDogInfo[dogChoice].location}</h4>
       <p>${hotDogInfo[dogChoice].description}</p>
       <a href="${hotDogInfo[dogChoice].restaurant}"></a>
-      <a class="return-switch" href="#top">Back to map</a>`);
+      <a class="return-switch" href="#main">Back to map</a>`);
       console.log(dogChoice);  
    }
    
    //FUNCTION THAT REMOVES HOT DOG from screen
    const removeDogOnPage = function(event){
-      $(".return-switch").on("click", function(event) {
-         scrollBackToTop();
+      $("#stuff").on("click", ".return-switch", function(event) {
+         $('html, body').animate({
+            scrollTop: $("#main").offset().top
+         }, 500);
+         window.setTimeout(function () {
+            $(".content").removeClass("show-me")
+         }, 1000);
       });
    }
+
+   removeDogOnPage();
 
    // const smoothScroll = function () {
    //    $("a[href^='#']").on("click", function (event) {
@@ -112,18 +162,8 @@ $(document).ready(function () {
    const scrollBackToTop = function () {
       window.setTimeout(function () {
          $(".content").removeClass("show-me")
-      }, 500);
+      }, 5000);
    };
-
-   $('a[href^="#"]').on('click', function (event) {
-      var target = $(this.getAttribute('href'));
-      if (target.length) {
-         event.preventDefault();
-         $('html, body').stop().animate({
-            scrollTop: target.offset().top
-         }, 500);
-      }
-   });
 
 
          
