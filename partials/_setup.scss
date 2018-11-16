@@ -7,7 +7,27 @@
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
 
-#mapid { height: 500px; }
+
+img {
+}
+//Mixin creation
+@mixin header($font-size) {
+   font-size: $font-size;
+   text-transform: uppercase;
+	font-family: $header-font;
+	font-weight: 900;
+   -webkit-text-fill-color: $red; /* Will override color (regardless of order) */
+  	-webkit-text-stroke-width: 3px;
+  	-webkit-text-stroke-color: $yellow;
+}
+
+// VARIABLE CREATION
+$red: #AD0000;
+$yellow: #fdfa19;
+$black: #070600;
+$white: #f7f7ff;
+$header-font:  'Source Sans Pro', sans-serif;
+
 
 
 
