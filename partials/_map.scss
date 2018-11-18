@@ -4,5 +4,9 @@
    border: 10px solid $yellow;
    border-radius: 10px;
    z-index: 1;
+   @media screen and (max-width: 700px) {
+         display: none;
+
+    	}
 }
 

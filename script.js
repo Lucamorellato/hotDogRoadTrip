@@ -5,7 +5,7 @@ $(document).ready(function () {
    
 	// LEAFLET MAP SETUP SCRIPT -----------------/
 	
-	//determine startin point of map
+	//determine startin point of map and general features
 	let mymap = L.map("mapid", {
 		zoomControl: false,
 		doubleClickZoom: false,
@@ -30,17 +30,19 @@ $(document).ready(function () {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(mymap);
 
-	let dogIcon = L.icon({
-		iconUrl: "assets/favicon.png",
-
-		iconSize: [38, 95], // size of the icon
-		iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-		shadowAnchor: [4, 62],  // the same for the shadow
-		popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+	//creating custom map icon
+	let redIcon = L.icon({
+		iconUrl: "assets/location.png",
+		iconSize: [25, 40], //size of the icon
+		iconAnchor: [12, 40], //values that make ZERO sense to determine icon and marker position
+		popupAnchor: [1, -35] //value that make ZERO sense to determine popup location
 	});
 
+
+	//built in leaflet function that LOCATES user
 	mymap.locate({});
 
+	//built in function that I used to place a pop-up with user location
 	function onLocationFound(e) {
 		L.marker(e.latlng).addTo(mymap)
 			.bindPopup("this is You").openPopup();
@@ -48,21 +50,15 @@ $(document).ready(function () {
 
 	mymap.on('locationfound', onLocationFound);
 
-	mymap.on('click', function (e) {
-		if (mymap.hasLayer(e)) {
-		
-		}
-	});
+
+	//experimenting with making a function that figures out click location gps coordinate to use for routes. Did not get far enough, leaving here for future self.
+	// mymap.on('click', function (e) {
+	// 	if (mymap.hasLayer(e)) {
+	// 	}
+	// });
 
 
 	
-
-	
-
-	
-
-	
-
 
 	// END OF MAP SCRIPT ----------------\
 
@@ -72,7 +68,7 @@ $(document).ready(function () {
       coneydog: {
          title: "Coney Island Dog",
          location: "Detroit Area, Michigan",
-         imgsrc: "https://www.fillmurray.com/500/200",
+         imgsrc: "https://www.fillmurray.com/500/300",
 			description: `The Coney Dog is not actually a New York tradition, but a Detroit Greek-American creation. That doesn’t make sense we know, but that’s how hot dogs and Detroit work. A Coney Dog features a soupy beef-heart chili with no beans, chopped raw onions, yellow mustard and gruff service. These dogs define what it means to be North American and are copied all across the continent. The old world and new world melding into one magical steamy tube. Best to order: “One up with everything. Tasty enough to tear a family apart, <a target="_blank" href="https://www.citylab.com/design/2012/08/how-coney-dog-became-detroits-signature-food/2779/">seriously</a>.`,
          restaurant:"https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
          coordinates: [42.3314, -83.045],
@@ -82,7 +78,7 @@ $(document).ready(function () {
       dangerdog: {
          title: "Danger Dog",
          location: "Los Angelos, California",
-         imgsrc: "https://www.fillmurray.com/500/200",
+         imgsrc: "https://www.fillmurray.com/500/300",
 			description: "The Danger Dog is at home sizzling on an illegal side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup (gasp!) and grilled veggies like pablano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
          restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
          coordinates: [34, -118.24],
@@ -92,7 +88,7 @@ $(document).ready(function () {
       seattledog: {
          title: "Seattle Dog",
          location: "Seattle, Washington",
-         imgsrc: "https://www.fillmurray.com/500/200",
+         imgsrc: "https://www.fillmurray.com/500/300",
 			description: "When you are hungry after a show at your favourite ‘grunge’ club in Seattle you probably think, 'Hey, I want a grilled hot dog smeared with cream cheese!' Those rumours you've heard are true, those fanatics in the Pacific Northwest cover their hotdogs in cream cheese, bury them in grilled onions and top them with sriracha sauce or mustard. Just like the city it gets it name from the Seattle Dog is interesting, well-mannered and is at risk being ruined by Amazon. These are way better than they sound, honestly.",
          restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
          coordinates: [46, -122.33],
@@ -100,10 +96,10 @@ $(document).ready(function () {
       },
 
       cheesyconey: {
-         title: "Cincinnati Cheesy Coney",
+         title: "Cheesy Coney",
          location: "Cincinnati, Ohio",
-         imgsrc: "https://www.fillmurray.com/500/200",
-         description: "Cheesy Coney's are just like the other Coney Dogs… but with cheese. Really, that is all Cincinnati has to bring to the table for us. Just kidding us real Coney knuckleheads can spot the differences. In Cincinnati their Coneys are small and have a dry bean-less chilli that features all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. And you get a mid-west serving of shredded cheese on top. Fun fact: there are four different local chains of ‘chilli' diners in the Cincinnati area and they are all open late, they will all cause heart-burn and they most definitely all have the word Chili in their name",
+         imgsrc: "https://www.fillmurray.com/500/300",
+         description: "Cheesy Coney's seem just like a Coney… but with cheese. But us real Coney knuckleheads can spot the differences. In Cincinnati their Coneys are small and have a dry bean-free chilli that has all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. Then you get a mid-west serving of shredded cheese on top. There are four different local chains of ‘chilli' diners in the Cincinnati area and they are will all cause heart-burn and they most definitely all the exact same menu.",
          restaurant:  "http://www.dixiechili.com/",
          coordinates: [39.1, -84.5120196],
          popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cheesy Coney</a>`
@@ -112,7 +108,7 @@ $(document).ready(function () {
       steamie: {
          title: "the Steamie",
          location: "Montreal, Quebec",
-         imgsrc: "https://www.fillmurray.com/500/200",
+         imgsrc: "https://www.fillmurray.com/500/300",
          description: "Ahhh la Belle Province! These Montreal staples have potentially the cutest name on the list. Steamies… served at ‘wieneries’ across the province. When you go to a real old school shop and ask for an ‘all dressed,’ that means you get a steamed dog in a steamed bun topped with mustard, raw onions and raw cabbage. Soft bun soft dog, crunchy toppings.",
          restuarant: "https://www.mtlblog.com/lifestyle/the-real-story-behind-montreal-pool-room",
          coordinates: [45.5017, -73.5673],
@@ -122,8 +118,8 @@ $(document).ready(function () {
       slawdog: {
          title: "West Virginia Slaw Dog",
          location: "West Virginia",
-         imgsrc: "https://www.fillmurray.com/500/200",
-         description: "This slaw doused rumbler is at home in the rolling Appalachia of our dreams, gently cruising through the tree-lined highways of our desires. The West Virginia Slaw Dog is a chili dog topped with raw onions and thick, creamy coleslaw. It is served on a soft pillowy bun and just like any self respecting hot dog it frowns upon ketchup.",
+         imgsrc: "https://www.fillmurray.com/500/300",
+         description: "This slaw doused rumbler is at home in the rolling Appalachia of our dreams, gently cruising through the tree-lined highways of our desires. The West Virginia Slaw Dog is a spicy chili dog topped with onions and thick, creamy coleslaw. It is served on a soft pillowy bun and just like any self respecting hot dog it frowns upon ketchup. Sign us up. ",
          restaurant: "http://kingtutdrivein.com/",
          coordinates: [38.5976, -80.4549],
          popUpContent: `<a class="switch" href="#stuff" data-dog="slawdog">Slaw-Dog</a>`
@@ -152,7 +148,7 @@ $(document).ready(function () {
 		kansascity: {
 			title: "Kansas City Frank",
 			location: "Kansas City, Missouri/Kansas",
-			imgsrc: "https://www.fillmurray.com/500/200",
+			imgsrc: "https://www.fillmurray.com/500/300",
 			description: "kansis city dog loremloremloremlorem",
 			restaurant: "http://www.fritzskcmeats.com/about-us.html",
 			coordinates: [39.099, -94.578],
@@ -174,7 +170,7 @@ $(document).ready(function () {
       //creates variable of popUp content
       const popUp = hotDogInfo[info].popUpContent;
       //assigns values to all markers
-		L.marker(place, )
+		L.marker(place, {icon: redIcon})
 			.addTo(mymap)
          .bindPopup(popUp);
    };
@@ -241,8 +237,7 @@ $(document).ready(function () {
 		window.setTimeout(function () {
 			displayDogOnPage(randomChoice(hotDogInfoArray)[0]);
 		}, 400);
-
-		
+	
 	})
 
 

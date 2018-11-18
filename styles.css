@@ -190,6 +190,9 @@ template {
   max-width: 1600px;
   width: 85%;
   margin: 0 auto; }
+  @media screen and (max-width: 700px) {
+    .wrapper {
+      width: 95%; } }
 
 html {
   font-size: 62.5%; }
@@ -197,7 +200,15 @@ html {
 body {
   font-size: 1.8rem;
   color: #070600;
-  line-height: 1.4; }
+  line-height: 1.4;
+  background: #bb0000 url(./assets/backgroundbigdog.png) top;
+  background-size: cover;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400; }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 1.6rem;
+      line-height: 1.4; } }
 
 a {
   text-decoration: none; }
@@ -212,12 +223,9 @@ img {
   border: 10px solid #fdfa19;
   border-radius: 10px;
   z-index: 1; }
-
-body {
-  background: #bb0000 url(./assets/backgroundbigdog.png) top;
-  background-size: cover;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400; }
+  @media screen and (max-width: 700px) {
+    #mapid {
+      display: none; } }
 
 main {
   display: -webkit-box;
@@ -234,6 +242,12 @@ main {
   -ms-flex-align: center;
   align-items: center;
   height: 100vh; }
+  @media screen and (max-width: 700x) {
+    main {
+      height: 125vh;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .switch {
   color: #070600;
@@ -241,13 +255,19 @@ main {
 
 .chaos {
   text-align: center;
-  margin: 5vh;
+  margin: 5vh 0 2vh 0;
   padding: 20px;
   background: #fdfa19;
   border-radius: 6px;
   border: 1px solid #070600;
-  -webkit-box-shadow: 1px 1px #070600, 2px 2px #070600;
-  box-shadow: 1px 1px #070600, 2px 2px #070600; }
+  -webkit-box-shadow: 1px 1px #070600, 2px 2px #070600, 3px 3px #070600;
+  box-shadow: 1px 1px #070600, 2px 2px #070600, 3px 3px #070600;
+  color: #070600; }
+  .chaos:active {
+    position: relative;
+    top: 2px;
+    -webkit-box-shadow: 1px 1px #070600, 2px 2px #070600;
+    box-shadow: 1px 1px #070600, 2px 2px #070600; }
 
 .content {
   display: -webkit-box;
@@ -261,7 +281,7 @@ main {
   align-items: center;
   height: 70%;
   width: 90%;
-  border: 10px solid #fdfa19;
+  border: 12px solid #fdfa19;
   background: #bb0000;
   border-radius: 10px;
   position: absolute;
@@ -271,14 +291,31 @@ main {
   -webkit-transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1); }
+  @media screen and (max-width: 950px) {
+    .content {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 90%;
+      top: 5%; } }
+  @media screen and (max-width: 650px) {
+    .content {
+      width: 95%; } }
   .content .img-container {
     width: 50%;
     padding: 10px; }
+    @media screen and (max-width: 950px) {
+      .content .img-container {
+        width: 80%; } }
     .content .img-container img {
+      overflow: hidden;
       border-radius: 5px; }
   .content .popup-content {
     width: 50%;
-    height: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -289,8 +326,10 @@ main {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 10px 20px;
-    margin: 5px 0; }
+    padding: 10px 20px; }
+    @media screen and (max-width: 950px) {
+      .content .popup-content {
+        width: 90%; } }
     .content .popup-content h2, .content .popup-content h3 {
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 400;
@@ -298,6 +337,8 @@ main {
       color: #fdfa19;
       text-transform: uppercase;
       margin: 0; }
+    .content .popup-content h2 {
+      text-shadow: 1px 1px #fdfa19, 2px 2px #070600; }
     .content .popup-content h3 {
       font-size: 2rem;
       padding: 10px 0; }
@@ -324,9 +365,17 @@ main {
     right: 10px; }
     .content .return-switch:active {
       color: #f7f7ff; }
+    @media screen and (max-width: 650px) {
+      .content .return-switch {
+        position: relative;
+        padding: 10px;
+        right: 0px; } }
 
 .show-me {
   right: 5%; }
+  @media screen and (max-width: 650px) {
+    .show-me {
+      right: 2.5%; } }
 
 img .svg {
   width: 100px;
