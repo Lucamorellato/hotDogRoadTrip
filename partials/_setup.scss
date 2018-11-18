@@ -6,11 +6,39 @@
 
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
+// VARIABLE CREATION
+$red: #bb0000;
+$yellow: #fdfa19;
+$black: #070600;
+$white: #f7f7ff;
+$header-font:  'Source Sans Pro', sans-serif;
 
+//GLOBAL STLYLES
+.wrapper {
+   max-width: 1600px;
+   width: 85%;
+	margin: 0 auto;
+}
+html {
+   font-size: 62.5%;
+}
+body {
+   font-size: 1.8rem;
+   color: $black;
+   line-height: 1.4;
+}
+
+a {
+   text-decoration: none;
+}
 
 img {
+   width: 100%;
+   display: block;
 }
-//Mixin creation
+
+
+//MIXIN CREATION
 @mixin header($font-size) {
    font-size: $font-size;
    text-transform: uppercase;
@@ -21,12 +49,6 @@ img {
   	-webkit-text-stroke-color: $yellow;
 }
 
-// VARIABLE CREATION
-$red: #AD0000;
-$yellow: #fdfa19;
-$black: #070600;
-$white: #f7f7ff;
-$header-font:  'Source Sans Pro', sans-serif;
 
 
 

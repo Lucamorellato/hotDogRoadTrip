@@ -1,5 +1,6 @@
 body {
-	background:$red;
+	background: $red url(./assets/backgroundbigdog.png) top;
+	background-size: cover;
 	font-family: $header-font;
 	font-weight: 400;
 }
@@ -26,49 +27,89 @@ height: 100vh;
 	box-shadow: 1px 1px $black, 2px 2px $black;
 }
 
-
 .content {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 	height: 70%;
-	width: 80%;
-	// box-shadow: 1px 1px #FFF900, 2px 2px #FFF900, 3px 3px, #FFF900, 4px 4px black, 5px 5px black;
+	width: 90%;
 	border: 10px solid $yellow;
 	background: $red;
 	border-radius: 10px;
 	position: absolute;
 	z-index: 10;
-	top: 23%;
-	right: 2000px;
+	top: 15%;
+	right: 5000px;
 	-webkit-transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
 	transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
 
-	p {
-		background: $yellow;
-		border-radius: 6px;
-		border: 1px solid $black;
-		width: 80%;
-		padding: 10px;
-		box-shadow: 1px 1px $black, 2px 2px $black;
+	.img-container {
+			width: 50%;
+			padding: 10px;
+			img {
+				border-radius: 5px;
+			}
+		}
+
+	.popup-content {
+		width: 50%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 10px 20px;
+		margin: 5px 0;
+
+		h2, h3{
+			font-family: $header-font;
+			font-weight: 400;
+			font-size: 3.5rem;
+			color: $yellow;
+			text-transform: uppercase;
+			margin: 0;
+		}
+
+		h3 {
+			font-size: 2rem;
+			padding: 10px 0;
+		}
+		
+		
+		.popup-link {
+			display: flex;
+			justify-content: flex-end;
+			padding-right: 5%;
+			text-transform: uppercase;
+		}
+		p {
+			color: $yellow;
+		}
+		a {
+			text-decoration: underline;
+			color: $yellow;
+		}
 	}
 
+
 	.return-switch {
-		padding: 40px;
-		background: $white;
-		color: $black;
+		padding: 15px;
+		color: $yellow;
+		font-size: 3rem;
 		position: absolute;
-		top: -40px;
-		right: -40px;
+		top: 0px;
+		right: 10px;
 		&:active{
-			background: $yellow;
+			color: $white;
+		}
+		.fas {
+			// font-size: 4rem;
 		}
 	}
 }
 
 .show-me {
-   right: 10%;
+	right: 5%;
+	
 }
 img {
 	.svg {
@@ -80,10 +121,8 @@ img {
 
 
 h1 {
-	@include header(4rem)
-}
-
-h2 {
-	@include header(2.5rem)
-	-webkit-text-stroke-width: 2px;
+	@include header(5.5rem);
+	background: $red;
+	padding: 25px 10px;
+	margin: 0;
 }

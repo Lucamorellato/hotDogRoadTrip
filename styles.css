@@ -1,10 +1,3 @@
-#mapid {
-  height: 75%;
-  width: 80%;
-  border: 10px solid #fdfa19;
-  border-radius: 10px;
-  z-index: 1; }
-
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -193,8 +186,36 @@ template {
   clip: rect(0 0 0);
   overflow: hidden; }
 
+.wrapper {
+  max-width: 1600px;
+  width: 85%;
+  margin: 0 auto; }
+
+html {
+  font-size: 62.5%; }
+
 body {
-  background: #AD0000;
+  font-size: 1.8rem;
+  color: #070600;
+  line-height: 1.4; }
+
+a {
+  text-decoration: none; }
+
+img {
+  width: 100%;
+  display: block; }
+
+#mapid {
+  height: 70%;
+  width: 100%;
+  border: 10px solid #fdfa19;
+  border-radius: 10px;
+  z-index: 1; }
+
+body {
+  background: #bb0000 url(./assets/backgroundbigdog.png) top;
+  background-size: cover;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400; }
 
@@ -232,70 +253,94 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   height: 70%;
-  width: 80%;
+  width: 90%;
   border: 10px solid #fdfa19;
-  background: #AD0000;
+  background: #bb0000;
   border-radius: 10px;
   position: absolute;
   z-index: 10;
-  top: 23%;
-  right: 2000px;
+  top: 15%;
+  right: 5000px;
   -webkit-transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 700ms cubic-bezier(0.23, 1, 0.32, 1); }
-  .content p {
-    background: #fdfa19;
-    border-radius: 6px;
-    border: 1px solid #070600;
-    width: 80%;
-    padding: 10px;
-    -webkit-box-shadow: 1px 1px #070600, 2px 2px #070600;
-    box-shadow: 1px 1px #070600, 2px 2px #070600; }
+  .content .img-container {
+    width: 50%;
+    padding: 10px; }
+    .content .img-container img {
+      border-radius: 5px; }
+  .content .popup-content {
+    width: 50%;
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 5px 0; }
+    .content .popup-content h2, .content .popup-content h3 {
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 400;
+      font-size: 3.5rem;
+      color: #fdfa19;
+      text-transform: uppercase;
+      margin: 0; }
+    .content .popup-content h3 {
+      font-size: 2rem;
+      padding: 10px 0; }
+    .content .popup-content .popup-link {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      padding-right: 5%;
+      text-transform: uppercase; }
+    .content .popup-content p {
+      color: #fdfa19; }
+    .content .popup-content a {
+      text-decoration: underline;
+      color: #fdfa19; }
   .content .return-switch {
-    padding: 40px;
-    background: #f7f7ff;
-    color: #070600;
+    padding: 15px;
+    color: #fdfa19;
+    font-size: 3rem;
     position: absolute;
-    top: -40px;
-    right: -40px; }
+    top: 0px;
+    right: 10px; }
     .content .return-switch:active {
-      background: #fdfa19; }
+      color: #f7f7ff; }
 
 .show-me {
-  right: 10%; }
+  right: 5%; }
 
 img .svg {
   width: 100px;
   height: 100px; }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5.5rem;
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
-  -webkit-text-fill-color: #AD0000;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #fdfa19; }
-
-h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 900;
-  -webkit-text-fill-color: #AD0000;
+  -webkit-text-fill-color: #bb0000;
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #fdfa19;
-  -webkit-text-stroke-width: 2px; }
+  background: #bb0000;
+  padding: 25px 10px;
+  margin: 0; }

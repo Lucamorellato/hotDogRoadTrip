@@ -6,12 +6,21 @@ $(document).ready(function () {
 	// LEAFLET MAP SETUP SCRIPT -----------------/
 	
 	//determine startin point of map
-   var mymap = L.map('mapid').setView([39.825, -98.5799], 4.2);
+	let mymap = L.map("mapid", {
+		zoomControl: false,
+		doubleClickZoom: false,
+		trackResize: false,
+		maxZoom: 18,
+		scrollWheelZoom: false,
+
+	}).setView([39.825, -98.5799], 4.4);
+	
+	
 	
 	//calling in tiles and content
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
+		maxZoom: 18,
       id: 'mapbox.streets',
       accessToken: 'your.mapbox.access.token'
    }).addTo(mymap);
@@ -20,7 +29,41 @@ $(document).ready(function () {
    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(mymap);
+
+	let dogIcon = L.icon({
+		iconUrl: "assets/favicon.png",
+
+		iconSize: [38, 95], // size of the icon
+		iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+		shadowAnchor: [4, 62],  // the same for the shadow
+		popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+	});
+
+	mymap.locate({});
+
+	function onLocationFound(e) {
+		L.marker(e.latlng).addTo(mymap)
+			.bindPopup("this is You").openPopup();
+	}
+
+	mymap.on('locationfound', onLocationFound);
+
+	mymap.on('click', function (e) {
+		if (mymap.hasLayer(e)) {
+		
+		}
+	});
+
+
 	
+
+	
+
+	
+
+	
+
+
 	// END OF MAP SCRIPT ----------------\
 
 
@@ -30,7 +73,7 @@ $(document).ready(function () {
          title: "Coney Island Dog",
          location: "Detroit Area, Michigan",
          imgsrc: "https://www.fillmurray.com/500/200",
-			description: `The Coney Dog is not actually a New York tradition, but a Detroit Greek-American creation. That doesn’t make sense we know, but that’s how hot dogs and Detroit work. A Coney Dog features beef-heart chili, chopped raw onions, yellow mustard and gruff service. These dogs define what it means to be North American. The old world and new world melding into one magical steamy tube. Best to order: “One up with everything.” Tasty enough to tear a family apart, <a target="_blank" href="https://www.citylab.com/design/2012/08/how-coney-dog-became-detroits-signature-food/2779/">seriously.`,
+			description: `The Coney Dog is not actually a New York tradition, but a Detroit Greek-American creation. That doesn’t make sense we know, but that’s how hot dogs and Detroit work. A Coney Dog features a soupy beef-heart chili with no beans, chopped raw onions, yellow mustard and gruff service. These dogs define what it means to be North American and are copied all across the continent. The old world and new world melding into one magical steamy tube. Best to order: “One up with everything. Tasty enough to tear a family apart, <a target="_blank" href="https://www.citylab.com/design/2012/08/how-coney-dog-became-detroits-signature-food/2779/">seriously</a>.`,
          restaurant:"https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
          coordinates: [42.3314, -83.045],
          popUpContent: `<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`
@@ -40,7 +83,7 @@ $(document).ready(function () {
          title: "Danger Dog",
          location: "Los Angelos, California",
          imgsrc: "https://www.fillmurray.com/500/200",
-			description: "The Danger Dog is at home sizzling on an illegal side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup(gasp!) and grilled veggies like pablano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
+			description: "The Danger Dog is at home sizzling on an illegal side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup (gasp!) and grilled veggies like pablano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
          restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
          coordinates: [34, -118.24],
          popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
@@ -57,17 +100,17 @@ $(document).ready(function () {
       },
 
       cheesyconey: {
-         title: "Cheesy Coney",
+         title: "Cincinnati Cheesy Coney",
          location: "Cincinnati, Ohio",
          imgsrc: "https://www.fillmurray.com/500/200",
-         description: "Cheesy Coney's are just like the other Coney Dogs… but with cheese. Really, that is all Cincinnati has to bring to the table for us. Well there are some fundamental differences to us real Coney knuckleheads. In Cincinnati their Coneys have a dry chilli that features all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. And you get a mid-west serving of shredded cheese on top. Fun fact: there are four different local chains of ‘chilli' diners in the Cincinnati area and they are all open late, they will all cause heart-burn and they most definitely all have the word Chili in their name",
+         description: "Cheesy Coney's are just like the other Coney Dogs… but with cheese. Really, that is all Cincinnati has to bring to the table for us. Just kidding us real Coney knuckleheads can spot the differences. In Cincinnati their Coneys are small and have a dry bean-less chilli that features all sorts of aromatic seasonings (cinnamon, allspice, clove) as opposed to Detroit’s ’soupy’ chilli. And you get a mid-west serving of shredded cheese on top. Fun fact: there are four different local chains of ‘chilli' diners in the Cincinnati area and they are all open late, they will all cause heart-burn and they most definitely all have the word Chili in their name",
          restaurant:  "http://www.dixiechili.com/",
          coordinates: [39.1, -84.5120196],
          popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cheesy Coney</a>`
       },
 
       steamie: {
-         title: "Steamie",
+         title: "the Steamie",
          location: "Montreal, Quebec",
          imgsrc: "https://www.fillmurray.com/500/200",
          description: "Ahhh la Belle Province! These Montreal staples have potentially the cutest name on the list. Steamies… served at ‘wieneries’ across the province. When you go to a real old school shop and ask for an ‘all dressed,’ that means you get a steamed dog in a steamed bun topped with mustard, raw onions and raw cabbage. Soft bun soft dog, crunchy toppings.",
@@ -84,9 +127,43 @@ $(document).ready(function () {
          restaurant: "http://kingtutdrivein.com/",
          coordinates: [38.5976, -80.4549],
          popUpContent: `<a class="switch" href="#stuff" data-dog="slawdog">Slaw-Dog</a>`
-      }
+		},
+		
+		chiledog: {
+			title: "Red Chile Dog",
+			locations: "New Mexico",
+			imgsrc: "./assets/chiledog.jpg",
+			description: "blah",
+			restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g60933-d540494-Reviews-Dog_House_Drive_In-Albuquerque_New_Mexico.html",
+			coordinates: [35.084, -106.650],
+			popUpContent: `<a class="switch" href="#stuff" data-dog="chiledog">Chile Dog</a>`
+		},
+
+		sonorandog: {
+			title: "Sonoran Hot Dog",
+			location: "Arizona",
+			imgsrc: "./assets/sonorandog.jpg",
+			description: `The Sonoran Hot Dog is the most perfect mix of Mexican and American culture. This child of the Sonoran desert is wrapped In bacon, served in a bollilo bun and topped with seasoned pinto beans, tomatoes, grilled peppers and onions. Sometimes you get mayo and mustard. Sometimes you get salsa verde. Delicious perfection. The Sonoran Dog is a gastronomical representation of the <a target="_blank" href="https://www.npr.org/templates/story/story.php?storyId=106366080"> latin diaspora</a>. Be sure to try out one of the 100s of ‘dogueros’ around Phoenix and Tuscon if you ever have the chance.`,
+			restaurant: "https://www.aquiconelnene.com/",
+			coordinates: [32.222, -110.974],
+			popUpContent: `<a class="switch" href="#stuff" data-dog="sonorandog">Sonoran Hot Dog</a>`
+		},
+
+		kansascity: {
+			title: "Kansas City Frank",
+			location: "Kansas City, Missouri/Kansas",
+			imgsrc: "https://www.fillmurray.com/500/200",
+			description: "kansis city dog loremloremloremlorem",
+			restaurant: "http://www.fritzskcmeats.com/about-us.html",
+			coordinates: [39.099, -94.578],
+			popUpContent: `<a class="switch" href="#stuff" data-dog="kansascity">Kansas City Frank</a>`
+		}
 	}
 	//END OF OBJECT DEFINITIONS -------------\
+
+
+	
+
 
 
 
@@ -97,8 +174,8 @@ $(document).ready(function () {
       //creates variable of popUp content
       const popUp = hotDogInfo[info].popUpContent;
       //assigns values to all markers
-      L.marker(place)
-         .addTo(mymap)
+		L.marker(place, )
+			.addTo(mymap)
          .bindPopup(popUp);
    };
 
@@ -116,10 +193,10 @@ $(document).ready(function () {
 	
    const displayDogOnPage = function(dogChoice) {
 		// add html to the section with class of content using template literals
-      $(".content").html(`<h2>${hotDogInfo[dogChoice].title}</h2><img src="${hotDogInfo[dogChoice].imgsrc}"><h4>${hotDogInfo[dogChoice].location}</h4>
+		$(".content").html(`<div class=img-container><img src="${hotDogInfo[dogChoice].imgsrc}"></div><div class=popup-content><h2>${hotDogInfo[dogChoice].title}</h2><h3>${hotDogInfo[dogChoice].location}</h3>
       <p>${hotDogInfo[dogChoice].description}</p>
-      <a href="${hotDogInfo[dogChoice].restaurant}"></a>
-		<a class="return-switch" href="#main">CLOSE</a>`); 
+      <a class="popup-link" target="_blank" href="${hotDogInfo[dogChoice].restaurant}">Try it here</a></div>
+		<a href="#" class="return-switch"><i aria-hidden class="fas fa-times"></i><span class="visuallyhidden">close pop-up window</span></a>`); 
 		//then add class that makes div display block so a full popup slides in
 		$(".content").addClass("show-me");
    }
@@ -128,7 +205,8 @@ $(document).ready(function () {
 	//FUNCTION THAT REMOVES HOT DOG POP-UP from screen
 
 		//when clicking the close pop-up button
-      $(`#stuff`).on(`click`, `.return-switch`, function(e) {
+		let removeDogFunction = function(){
+      // $(`#stuff`).on(`click`, `.return-switch`, function(e) {
 			//wait .2 second to remove class that displays content for 'weight' feel
             window.setTimeout(function () {
                   $(".content").removeClass("show-me")
@@ -137,7 +215,14 @@ $(document).ready(function () {
             window.setTimeout(function () {
                   $(".content").empty();
             }, 400);
-	})
+	
+	};
+
+	$(`#stuff`).on(`click`, `.return-switch`, function (e) {
+		removeDogFunction();
+	});
+
+
 
 	//RANDOM HOTDOG BUTTON -------/
 
@@ -150,10 +235,16 @@ $(document).ready(function () {
 		return randomItem;
 	};
 
-	console.log(randomChoice(hotDogInfoArray));
+
 	$(".chaos").on("click", function(){
-		displayDogOnPage(randomChoice(hotDogInfoArray)[0]);
+		removeDogFunction();
+		window.setTimeout(function () {
+			displayDogOnPage(randomChoice(hotDogInfoArray)[0]);
+		}, 400);
+
+		
 	})
+
 
 }); 
 
