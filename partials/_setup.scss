@@ -6,12 +6,15 @@
 
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-// VARIABLE CREATION
-$red: #bb0000;
-$yellow: #fdfa19;
+
+
+//VARIABLE CREATION
+$red: #ae1e23;
+$yellow: #ffff00;
 $black: #070600;
 $white: #f7f7ff;
 $header-font:  'Source Sans Pro', sans-serif;
+
 
 //GLOBAL STLYLES
 .wrapper {
@@ -19,28 +22,25 @@ $header-font:  'Source Sans Pro', sans-serif;
    width: 85%;
    margin: 0 auto;
    @media screen and (max-width: 700px) {
-         width: 95%;
-    	}
-   
+      width: 95%;
+   }
 }
+
 html {
    font-size: 62.5%;
 }
+
 body {
    font-size: 1.8rem;
    color: $black;
-   line-height: 1.4;
-   background: $red url(./assets/backgroundbigdog.png) top;
+   background: $red url(./assets/background.png) top;
 	background-size: cover;
 	font-family: $header-font;
    font-weight: 400;
    
    @media screen and (max-width: 768px) {
-         font-size: 1.6rem;
-         line-height: 1.4;
-
-    	}
-   
+      font-size: 1.7rem;
+   }   
 }
 
 a {

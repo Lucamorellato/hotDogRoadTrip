@@ -1,24 +1,19 @@
-body {
-	
-}
-
+//MAIN STYLES
 main {
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
 height: 100vh;
-	@media screen and (max-width: 700x) {
-		height: 125vh;
-		justify-content: center;
-	}
 }
+
+//styles for main switch
 .switch {
 	color: $black;
 	padding: 10px 40px;
 }
 
-.chaos {
+.chaos,  {
 	text-align: center;
 	margin: 5vh 0 2vh 0;
 	padding: 20px;
@@ -28,15 +23,23 @@ height: 100vh;
 	box-shadow: 1px 1px $black, 2px 2px $black, 3px 3px $black;
 	color: $black;
 	&:active {
+		background: darken($yellow, 10);
 		position: relative;
 		top: 2px;
 		box-shadow: 1px 1px $black, 2px 2px $black;
 	}
+	@media screen and (max-width: 600px) {
+		margin: 10px 0 100px 0;
+	}
+	@media screen and (max-width: 500px) {
+		display: none;
+	}
 }
 
-.content {
+//STYLES FOR THE CONTENT IN POP-UP WINDOW
+.content, {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	height: 70%;
 	width: 90%;
@@ -59,32 +62,52 @@ height: 100vh;
 	
 	@media screen and (max-width: 650px) {
 		width: 95%;
-   }
+		border: 8px solid $yellow;
+		height: 95%;
+		top: 3%;
+	}
 
-	.img-container {
-		width: 50%;
-		padding: 10px;
+	//IMAGE CONTAINER FOR POPUP
+	.popup--img {
+		width: 48%;
+		padding: 10px 10px 10px 30px;
 
 		@media screen and (max-width: 950px) {
-			width: 80%;
-	
+			width: 60%;
+			padding: 10px 10px;
+			margin: 10px 0;
+		}
+		 @media screen and (max-width: 500px) {
+			width: 90%;
+			padding: 0;
+			margin: 20px 0 0 0;
     	}
 		img {
-			overflow: hidden;
 			border-radius: 5px;
+			@media screen and (max-width: 500px) {
+				padding: 20px;
+				border-radius: 10px;
+    	}
 		}
 	}
 
-	.popup-content {
-		width: 50%;
+	//TEXT CONTAINER FOR POPUP
+	.popup--text {
+		width: 48%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 10px 20px;
+		padding: 10px 30px 10px 10px;
 
 		@media screen and (max-width: 950px) {
 			width: 90%;
-    	}
+			padding: 10px 10px;
+		}
+		@media screen and (max-width: 500px) {
+			white-space: pre-wrap;
+			overflow-y: visible;
+			overflow-x: hidden;
+		}
 
 		h2, h3{
 			font-family: $header-font;
@@ -96,32 +119,48 @@ height: 100vh;
 		}
 
 		h2 {
-			text-shadow: 1px 1px $yellow, 2px 2px $black;
+			text-shadow: 1px 1px $black, 2px 2px $black;
+			letter-spacing: 1.5px;
+			@media screen and (max-width: 500px) {
+				font-size: 2.5rem;
+    		}
 		}
 
 		h3 {
 			font-size: 2rem;
 			padding: 10px 0;
+			@media screen and (max-width: 500px) {
+				font-size: 1.8rem;
+    		}
 		}
 		
-		
-		.popup-link {
+		//link to restaurant suggestion within popup
+		.popup--link {
 			display: flex;
 			justify-content: flex-end;
 			padding-right: 5%;
 			text-transform: uppercase;
+			@media screen and (max-width: 500px) {
+				padding: 20px;
+			}
 		}
+
 		p {
+			line-height: 1.5;
 			color: $yellow;
+			@media screen and (max-width: 500px) {
+				margin: 5px 0 5px 0;
+			}
 		}
+		
 		a {
 			text-decoration: underline;
 			color: $yellow;
 		}
 	}
 
-
-	.return-switch {
+	//switch to close popup window
+	.close-switch {
 		padding: 15px;
 		color: $yellow;
 		font-size: 3rem;
@@ -132,15 +171,16 @@ height: 100vh;
 			color: $white;
 		}
 		@media screen and (max-width: 650px) {
-			position: relative;
+			font-size: 2.5rem;
 			padding: 10px;
-			right: 0px;
-
+			right: 2px;
+			top:-5px;
    	}
 
 	}
 }
 
+//CLASS THAT IS USED BY addClass() JQUERY FUNCTION TO SHOW POPUP
 .show-me {
 	right: 5%;
 
@@ -148,18 +188,90 @@ height: 100vh;
 		right: 2.5%;
    }
 }
-img {
-	.svg {
-		width: 100px;
-		height: 100px;
+
+//HEADER STYLES
+.main-header {
+	@include header(5.5rem);
+	// background: $red;
+	padding: 30px 10px;
+	margin: 0;
+	@media screen and (max-width: 600px) {
+		font-size: 3.3rem;
+		text-align: center;
+		padding: 25px 0;
+   }
+}
+
+//SECRET WINDOW STYLES
+.secret {
+	display: none;
+	text-align: center;
+	position: absolute;
+	width: 80%;
+	height: 50%;
+	top: 50%;
+
+	p {
+		@include header(4.5rem);
 	}
 }
 
+//STYLES FOR MOBILE ONLY SECTION
+.mobile-section {
+	display: none;
+	font-size: 1.6rem;
+
+	@media screen and (max-width: 700px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 90vh;
+	}
+	
+	.mobile--menu {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+    	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	.menu--switch {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-transform: uppercase;
+		font-size: 2rem;
+		margin: 15px 0 30px 0;
+		padding: 15px 15px;
+		background: #0D610A;
+		box-shadow: 1px 1px $yellow, 2px 2px $yellow;
+		color: $yellow;
+		border-radius: 6px;
+		width: 200px;
+	
+		
+		i {
+			padding-left: 20px;
+		}
 
 
-h1 {
-	@include header(5.5rem);
-	background: $red;
-	padding: 25px 10px;
-	margin: 0;
+	}
+	
+
+	.mobile-switch, {
+		display: none;
+		text-align: center;
+		margin: 5px 10px;
+		padding: 10px;
+		background: $yellow;
+		border-radius: 6px;
+		border: 1px solid $black;
+		box-shadow: 1px 1px $black, 2px 2px $black;
+		color: $black;
+		&:active {
+			background: darken($yellow, 10);
+			position: relative;
+			top: 2px;
+			box-shadow: 1px 1px $black;
+		}
+	}
 }
