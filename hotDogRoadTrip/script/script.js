@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 
 	//built in leaflet function that LOCATES user
-	// mymap.locate({});
+	mymap.locate({});
 
 	//built in function that I used to place a pop-up with user location
 	function onLocationFound(e) {
@@ -275,7 +275,7 @@ $(document).ready(function () {
 	
 	})
 
-
+	//FEATURE THAT MAKES MOBILE MENU EXPANDABLE
 	$(".menu--switch").on("click", function(e) {
 		$(".mobile-switch").toggle('ease-in');
 	});
@@ -290,7 +290,7 @@ $(document).ready(function () {
 // KONAMI CODE -----------/
 
 // KEYS OBKECT DEFININING KEYS THAT ARE STROKABLE
-var konamiKeys = {
+let konamiKeys = {
       37: 'left',
       38: 'up',
       39: 'right',
