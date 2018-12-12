@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 
 	//built in leaflet function that LOCATES user
-	mymap.locate({});
+	// mymap.locate({});
 
 	//built in function that I used to place a pop-up with user location
 	function onLocationFound(e) {
@@ -80,7 +80,7 @@ $(document).ready(function () {
          location: "Los Angelos, California",
 			imgsrc: `./assets/dangerdog.jpeg" alt="a grill covered in bacon wrapped hot dogs, onions and jalapenos in Los Angeles California`,
 			description: "The Danger Dog is at home sizzling on an illegal side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup (gasp!) and grilled veggies like pablano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
-         restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g42139-d950771-Reviews-Lafayette_Coney_Island-Detroit_Michigan.html",
+			restaurant: "https://www.google.com/maps/place/Silver+Lake,+Los+Angeles,+CA,+USA/@34.0932274,-118.2849349,14z/data=!3m1!4b1!4m5!3m4!1s0x80c2c73a7425883f:0xed2d053e27a4d706!8m2!3d34.0869409!4d-118.2702036",
          coordinates: [34, -118.24],
          popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
       },
@@ -334,13 +334,13 @@ document.addEventListener("keydown", function (e) {
 	function activateEasterEgg() {
 			
 			//wanted to add a new background
-			document.body.style.backgroundImage = "url('images/cheatBackground.png')";
+			// document.body.style.backgroundImage = "url('images/cheatBackground.png')";
 			//plays audio 
 			let audio = new Audio('assets/ballgame.mp3');
 			audio.play();
 			
 			// .toggle([duration][, complete])
-			//alerts that you are cool
+			// alerts that you are cool
 			alert("WOW! COOL!");
 		}	
 
