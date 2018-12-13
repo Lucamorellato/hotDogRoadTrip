@@ -2,7 +2,6 @@
 //DOCUMENT READY
 $(document).ready(function () {
 
-   
 	// LEAFLET MAP SETUP SCRIPT -----------------/
 	
 	//determine startin point of map and general features
@@ -14,7 +13,6 @@ $(document).ready(function () {
 		scrollWheelZoom: false,
 
 	}).setView([39.825, -98.5799], 4.4);
-	
 	
 	
 	//calling in tiles and content
@@ -39,7 +37,7 @@ $(document).ready(function () {
 	});
 
 
-	//built in leaflet function that LOCATES user
+	//built in leaflet function that LOCATES user not using because it is mostly whatever and not that useful.
 	// mymap.locate({});
 
 	//built in function that I used to place a pop-up with user location
@@ -50,19 +48,15 @@ $(document).ready(function () {
 
 	mymap.on('locationfound', onLocationFound);
 
-
 	//experimenting with making a function that figures out click location gps coordinate to use for routes. Did not get far enough, leaving here for future self.
 	// mymap.on('click', function (e) {
 	// 	if (mymap.hasLayer(e)) {
 	// 	}
 	// });
 
-
-	
-
 	// END OF MAP SCRIPT ----------------\
 
-
+	//these are all of the hot dogs
    //OBJECT DEFINITIONS -----------/
    const hotDogInfo = {
       coneydog: {
@@ -74,7 +68,6 @@ $(document).ready(function () {
          coordinates: [42.3314, -83.045],
          popUpContent: `<a class="switch" href="#stuff" data-dog="coneydog">Coney Dog</a>`
       },
-
       dangerdog: {
          title: "Danger Dog",
          location: "Los Angelos, California",
@@ -84,7 +77,6 @@ $(document).ready(function () {
          coordinates: [34, -118.24],
          popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
       },
-
       seattledog: {
          title: "Seattle Dog",
          location: "Seattle, Washington",
@@ -94,7 +86,6 @@ $(document).ready(function () {
          coordinates: [46, -122.33],
          popUpContent: `<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`
       },
-
       cheesyconey: {
          title: "Cheesy Coney",
          location: "Cincinnati, Ohio",
@@ -104,7 +95,6 @@ $(document).ready(function () {
          coordinates: [39.1, -84.5120196],
          popUpContent: `<a class="switch" href="#stuff" data-dog="cheesyconey">Cheesy Coney</a>`
       },
-
       steamie: {
          title: "the Steamie",
          location: "Montreal, Quebec",
@@ -114,7 +104,6 @@ $(document).ready(function () {
          coordinates: [45.5017, -73.5673],
          popUpContent: `<a class="switch" href="#stuff" data-dog="steamie">Steamie</a>`
       },
-
       slawdog: {
          title: "W. Virginia Slaw Dog",
          location: "West Virginia",
@@ -124,7 +113,6 @@ $(document).ready(function () {
          coordinates: [38.5976, -80.4549],
          popUpContent: `<a class="switch" href="#stuff" data-dog="slawdog">Slaw-Dog</a>`
 		},
-		
 		chiledog: {
 			title: "Red Chile Dog",
 			location: "New Mexico",
@@ -134,7 +122,6 @@ $(document).ready(function () {
 			coordinates: [35.084, -106.650],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="chiledog">Chile Dog</a>`
 		},
-
 		sonorandog: {
 			title: "Sonoran Hot Dog",
 			location: "Arizona",
@@ -144,7 +131,6 @@ $(document).ready(function () {
 			coordinates: [32.222, -110.974],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="sonorandog">Sonoran Hot Dog</a>`
 		},
-
 		kansascity: {
 			title: "Kansas City Frank",
 			location: "Kansas City, Missouri/Kansas",
@@ -154,7 +140,6 @@ $(document).ready(function () {
 			coordinates: [39.099, -94.578],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="kansascity">Kansas City Frank</a>`
 		},
-
 		nysystem: {
 			title: "NY System Weiner",
 			location: "Rhode Island",
@@ -164,7 +149,6 @@ $(document).ready(function () {
 			coordinates: [41.82, -71.412],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="nysystem">NY System Weiner</a>`
 		},
-
 		chicagodog: {
 			title: "Chicago Dog",
 			location: "Chicago, Illinois",
@@ -174,7 +158,6 @@ $(document).ready(function () {
 			coordinates: [41.87, -87.62],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="chicagodog">Chicago Dog</a>`
 		},
-
 		scrambledog: {
 			title: "Scrambled Dog",
 			location: "Columbus, Georgia",
@@ -183,14 +166,9 @@ $(document).ready(function () {
 			restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g34859-d1026360-Reviews-Dinglewood_Pharmacy-Columbus_Georgia.html",
 			coordinates: [32.46, -84.987],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="scrambledog">Scrambled Dog</a>`
-
 		}
 	}
 	//END OF OBJECT DEFINITIONS -------------\
-
-
-	
-
 
 
 
@@ -216,8 +194,8 @@ $(document).ready(function () {
       displayDogOnPage(dogChoice);
    });
 
+
 	//FUNCTION THAT DISPLAYS HOT DOG OF USER CHOICE
-	
    const displayDogOnPage = function(dogChoice) {
 		// add html to the section with class of content using template literals
 		$(".content").html(`<div class=popup--img><img src="${hotDogInfo[dogChoice].imgsrc}"></div><div class=popup--text><h2>${hotDogInfo[dogChoice].title}</h2><h3>${hotDogInfo[dogChoice].location}</h3>
@@ -227,27 +205,28 @@ $(document).ready(function () {
 		//then add class that makes div display block so a full popup slides in
 		$(".content").addClass("show-me");
    }
-
    
 	//FUNCTION THAT REMOVES HOT DOG POP-UP from screen
-
-		
-		let removeDogFunction = function(){
-
-			//wait .2 second to remove class that displays content for 'weight' feel
-            window.setTimeout(function () {
-                  $(".content").removeClass("show-me")
-				}, 200);
-				//wait an additional .2 seconds to remove content from popup so it slides away full
-            window.setTimeout(function () {
-                  $(".content").empty();
-            }, 400);
-	
+	let removeDogFunction = function(){
+		//wait .2 second to remove class that displays content for 'weight' feel
+			window.setTimeout(function () {
+					$(".content").removeClass("show-me")
+			}, 200);
+			//wait an additional .2 seconds to remove content from popup so it slides away full
+			window.setTimeout(function () {
+					$(".content").empty();
+			}, 400);
 	};
 
 	//when clicking the close pop-up button
 	$(`#stuff`).on(`click`, `.close-switch`, function (e) {
 		removeDogFunction();
+	});
+	//quick function to make pop-up close on hitting of 'esc' key
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) { // esc keycode
+			removeDogFunction();
+		}
 	});
 
 
@@ -263,7 +242,6 @@ $(document).ready(function () {
 		return randomItem;
 	};
 
-
 	// when pressing 'chaos'/random button
 	$(".chaos").on("click", function(){
 		//remove current popup if there is one
@@ -274,20 +252,16 @@ $(document).ready(function () {
 		}, 400);
 	
 	})
-
 	//FEATURE THAT MAKES MOBILE MENU EXPANDABLE
 	$(".menu--switch").on("click", function(e) {
 		$(".mobile-switch").toggle('ease-in');
 	});
-
-
 }); 
 
 
-
-
-
 // KONAMI CODE -----------/
+
+//was going to have some fun here. JS was new to me... I want to try some things.
 
 // KEYS OBKECT DEFININING KEYS THAT ARE STROKABLE
 let konamiKeys = {
@@ -315,7 +289,6 @@ document.addEventListener("keydown", function (e) {
 	//loop comparing key stroke to the required keys for the code, if matchtes move up konami code position ++
 	if (key === requiredKey) {
 		konamiCodePosition++;
-
 		// if the last key is reached, activate easter egg
 		if (konamiCodePosition === konamiCode.length) {
 			activateEasterEgg();
@@ -327,23 +300,20 @@ document.addEventListener("keydown", function (e) {
 	}
 
 	//just confirming counter is working
-	console.log(konamiCodePosition);
+	// console.log(konamiCodePosition);
 
 
 //function that activate the easter eh
 	function activateEasterEgg() {
-			
 			//wanted to add a new background
 			// document.body.style.backgroundImage = "url('images/cheatBackground.png')";
 			//plays audio 
 			let audio = new Audio('assets/ballgame.mp3');
 			audio.play();
-			
 			// .toggle([duration][, complete])
 			// alerts that you are cool
 			alert("WOW! COOL!");
 		}	
-
 })
 // END OF KONAMI CODE ------------\
 
