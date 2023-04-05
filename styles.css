@@ -502,3 +502,19 @@ main {
       top: 2px;
       -webkit-box-shadow: 1px 1px #070600;
       box-shadow: 1px 1px #070600; }
+
+footer {
+  text-align:center;
+  color: #ffff00;
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: white;
+}
+footer a:hover {
+  color: #ffff00;
+
+}

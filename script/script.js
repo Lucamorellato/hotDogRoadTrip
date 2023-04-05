@@ -72,16 +72,25 @@ $(document).ready(function () {
          title: "Danger Dog",
          location: "Los Angelos, California",
 			imgsrc: `./assets/dangerdog.jpeg" alt="a grill covered in bacon wrapped hot dogs, onions and jalapenos in Los Angeles California`,
-			description: "The Danger Dog is at home sizzling on an illegal side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup (gasp!) and grilled veggies like pablano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
+			description: "The Danger Dog is at home sizzling on a bootleg side-walk grill basking in caramelizing onions. This LA tradition is bacon-wrapped and grilled, covered in mayo, Ketchup (gasp!) and grilled veggies like poblano peppers. Colloquially called ‘dangerous’ because some people don’t understand the beauty of supporting street entrepreneurs through ethical consumption of delicious hot dogs… But the name does sound cool. These things are so darn LA that the LA City Council named it the cities “Official Hot Dog.” ",
 			restaurant: "https://www.google.com/maps/place/Silver+Lake,+Los+Angeles,+CA,+USA/@34.0932274,-118.2849349,14z/data=!3m1!4b1!4m5!3m4!1s0x80c2c73a7425883f:0xed2d053e27a4d706!8m2!3d34.0869409!4d-118.2702036",
          coordinates: [34, -118.24],
          popUpContent: `<a class="switch" href="#stuff" data-dog="dangerdog">Danger Dog</a>`
       },
+			tjdog: {
+				title: "Tijuana Dog",
+				location: "Tijuana, Baja California",
+				imgsrc: `./assets/tjdog.jpg" alt="a grill covered in bacon wrapped hot dogs, onions and jalapenos in Los Angeles California`,
+				description: `The Tijuana Dog, or “T.J. Dog”, is a real gem. Originating in the Mexican border community of Tijuana, but spreading south down the entire Baja Penninsula, the TJ Dog shares some similarities with its nearby desert dwelling cousins. Meaning, it blends the best parts of American fast food with Mexican cookery and flavour. Bacon wrapped, served in a fluffy bun and topped with chopped tomato and onions, crema, mustard and salsa. Next time you head down to “T.J.” be sure to check out one of the many dog stands on the way to try out the original <a target="_blank" href="https://goo.gl/maps/wR2M261KrdG4mG1YA">Caesar Salad</a>.`,
+				restaurant: "https://goo.gl/maps/xzGmkXRicHN7UJYM8",
+						coordinates: [31.4488, -116.4627],
+						popUpContent: `<a class="switch" href="#stuff" data-dog="tjdog">TJ Dog</a>`
+		 	},
       seattledog: {
          title: "Seattle Dog",
          location: "Seattle, Washington",
 			imgsrc: `./assets/seattledog.jpg" alt="a hot dog covered in cream cheese wrapped up in paper`,
-			description: "When you are hungry after a show at your favourite ‘grunge’ club in Seattle you probably think, 'Hey, I want a grilled hot dog smeared with cream cheese!' Those rumours you've heard are true, those fanatics in the Pacific Northwest cover their hotdogs in cream cheese, bury them in grilled onions and top them with sriracha sauce or mustard. Just like the city it gets it name from the Seattle Dog is interesting, well-mannered and is at risk being ruined by Amazon. These are way better than they sound, honestly.",
+			description: "When you are hungry after a show at your favourite ‘grunge’ club in Seattle you probably think, 'Hey, I want a grilled hot dog smeared with cream cheese!' Those rumours you've heard are true, those fanatics in the Pacific Northwest cover their hotdogs in cream cheese, bury them in grilled onions and top them with sriracha sauce or mustard. Just like the city, the Seattle Dog is interesting, well-mannered and is at risk of being by greedy developers and real estate agents. These are way better than they sound.",
 			restaurant: "https://www.yelp.ca/biz/comet-dogs-seattle-2",
          coordinates: [46, -122.33],
          popUpContent: `<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`
@@ -108,7 +117,7 @@ $(document).ready(function () {
          title: "W. Virginia Slaw Dog",
          location: "West Virginia",
 			imgsrc: `./assets/slawdog.jpg" alt="a hot dog in a fluffy bun, covered in creamy white bbq style coleslaw.`,
-         description: "This slaw doused rumbler is at home in the rolling Appalachia of our dreams, gently cruising through the tree-lined highways of our desires. The West Virginia Slaw Dog is a spicy chili dog topped with onions and thick, creamy coleslaw. It is served on a soft pillowy bun and just like any self respecting hot dog it frowns upon ketchup.",
+         description: "This slaw doused rumbler is at home in the rolling Appalachia of our dreams, gently cruising through the tree-lined highways to the core of hunger. The West Virginia Slaw Dog is a spicy chili dog topped with onions and thick, creamy coleslaw. It is served on a soft pillowy bun and just like any self respecting hot dog it frowns upon ketchup.",
 			restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g59262-d2373566-Reviews-Morrison_s_Drive_Inn-Logan_West_Virginia.html",
          coordinates: [38.5976, -80.4549],
          popUpContent: `<a class="switch" href="#stuff" data-dog="slawdog">Slaw-Dog</a>`
@@ -126,7 +135,7 @@ $(document).ready(function () {
 			title: "Sonoran Hot Dog",
 			location: "Arizona",
 			imgsrc: `./assets/sonorandog.jpg" alt="A Sonoran Hot dog for El Nene, famous for its many mexican influenced toppings. This dog features pinto beans, mayo and bacon.`,
-			description: `The Sonoran Hot Dog is the most perfect mix of Mexican and American culture. This child of the Sonoran desert is wrapped In bacon, served in a bollilo bun and topped with seasoned pinto beans, tomatoes, grilled peppers and onions. Sometimes you get mayo and mustard. Sometimes you get salsa verde. Delicious perfection. The Sonoran Dog is a gastronomical representation of the<a target="_blank" href="https://www.npr.org/templates/story/story.php?storyId=106366080"> latin diaspora</a>. Be sure to try out one of the 100s of ‘dogueros’ around Phoenix and Tuscon if you ever have the chance.`,
+			description: `The Sonoran Hot Dog is the most perfect mix of Mexican and American culture. This child of the Sonoran desert is wrapped in bacon, served in a bollilo bun and topped with seasoned pinto beans, tomatoes, grilled peppers and onions. Sometimes you get mayo and mustard. Sometimes you get salsa verde. Delicious perfection. The Sonoran Dog is a gastronomical representation of the<a target="_blank" href="https://www.npr.org/templates/story/story.php?storyId=106366080"> latin diaspora</a>. Be sure to try out one of the 100s of ‘dogueros’ around Phoenix and Tuscon if you ever have the chance. You simply won't regret it.`,
 			restaurant: "https://www.aquiconelnene.com/",
 			coordinates: [32.222, -110.974],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="sonorandog">Sonoran Hot Dog</a>`
@@ -166,6 +175,16 @@ $(document).ready(function () {
 			restaurant: "https://www.tripadvisor.ca/Restaurant_Review-g34859-d1026360-Reviews-Dinglewood_Pharmacy-Columbus_Georgia.html",
 			coordinates: [32.46, -84.987],
 			popUpContent: `<a class="switch" href="#stuff" data-dog="scrambledog">Scrambled Dog</a>`
+		},
+		newjerseyripper: {
+			title: "New Jersey Ripper",
+			location: "New Jersey",
+			imgsrc: `./assets/ripper.jpg" alt="A New Jersey Ripper from Ruttshut`,
+			description: "A deep fried Hot Dog. No not a corn dog, no batter here. Dog stands from the NYC sprawl to the beutiful Jersey Shore serve up hot and crunchy deep friend weiners. Typical hot dog toppings apply, but real heads use the cabbage/mustard relish to counter balance the crunch 'ripped' skin of the weiner. So next time you cruising through the Pine Barrens or searching for the Jersey Devil, make sure to find a properly greasing looking joint and give this Garden State icon a chance.  ",
+			restaurant: "https://www.ruttshut.com/menu/",
+			coordinates: [39.3, -74.71],
+			popUpContent: `<a class="switch" href="#stuff" data-dog="newjerseyripper">New Jersey Ripper</a>`
+
 		}
 	}
 	//END OF OBJECT DEFINITIONS -------------\
