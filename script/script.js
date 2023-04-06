@@ -90,7 +90,7 @@ $(document).ready(function () {
          title: "Seattle Dog",
          location: "Seattle, Washington",
 			imgsrc: `./assets/seattledog.jpg" alt="a hot dog covered in cream cheese wrapped up in paper`,
-			description: "When you are hungry after a show at your favourite ‘grunge’ club in Seattle you probably think, 'Hey, I want a grilled hot dog smeared with cream cheese!' Those rumours you've heard are true, those fanatics in the Pacific Northwest cover their hotdogs in cream cheese, bury them in grilled onions and top them with sriracha sauce or mustard. Just like the city, the Seattle Dog is interesting, well-mannered and is at risk of being by greedy developers and real estate agents. These are way better than they sound.",
+			description: "When you are hungry after a show at your favourite ‘grunge’ club in Seattle you probably think, 'Hey, I want a grilled hot dog smeared with cream cheese!' Those rumours you've heard are true, those fanatics in the Pacific Northwest cover their hotdogs in cream cheese, bury them in grilled onions and top them with sriracha sauce or mustard. Just like the city, the Seattle Dog is interesting, well-mannered and is at risk of being ruined by greedy developers and real estate agents. These are way better than they sound.",
 			restaurant: "https://www.yelp.ca/biz/comet-dogs-seattle-2",
          coordinates: [46, -122.33],
          popUpContent: `<a class="switch" href="#stuff" data-dog="seattledog">Seattle Dog</a>`
